@@ -1,5 +1,5 @@
 let team;
-onmessage = ()=>{
+onmessage = messageEvent => {
 	onmessage = tock;
 	team = messageEvent.data.opponents.findIndex(opponent=>opponent===null);
 	console.log(messageEvent.data.settings);
