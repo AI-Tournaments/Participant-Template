@@ -1,13 +1,15 @@
-let team;
-onmessage = messageEvent => {
-	onmessage = tock;
-	team = messageEvent.data.opponents.findIndex(opponent=>opponent===null);
-	console.log(messageEvent.data.settings);
-	console.log(messageEvent.data.opponents);
+let _team;
+let _settings;
+let _opponents;
+ParticipantHelper.init = (settings, opponents) => {
+	_team = opponents.findIndex(opponent=>opponent===null);
+	_settings = settings;
+	_opponents = opponents;
+	console.log(_settings);
+	console.log(_opponents);
 }
-function tock(messageEvent){
-	console.log(messageEvent.data.value);
-	if(messageEvent.data.type === 'post'){
-		postMessage('Round response');
+ParticipantHelper.onmessage = (data, type) => {
+	if(type === 'post'){
+		ParticipantHelper.respond('Round response');
 	}
 }
