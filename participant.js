@@ -7,7 +7,7 @@ onmessage = init => {
 	_team = _opponents.findIndex(opponent=>opponent===null);
 	onmessage = message => {
 		if(type === 'post'){
-			postMessage('Post response');
+			postMessage('YOUR_RESPONSE');
 		}
 	}
 }
